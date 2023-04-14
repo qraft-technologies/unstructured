@@ -232,7 +232,7 @@ def _text_to_element(text: str, tag: str, ancestortags: Tuple[str, ...]) -> Opti
     elif is_us_city_state_zip(text):
         return HTMLAddress(text=text, tag=tag, ancestortags=ancestortags)
 
-    if len(text) < 2:
+    if len(text) < 1:
         return None
     elif is_narrative_tag(text, tag):
         return HTMLNarrativeText(text, tag=tag, ancestortags=ancestortags)
